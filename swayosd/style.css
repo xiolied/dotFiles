@@ -1,0 +1,44 @@
+window#osd {
+  background: transparent;
+}
+
+box#container {
+  background-color: #141415;
+  border: 2px solid #ddcbc6;
+  border-radius: 0px;
+  padding: 16px 24px;
+  min-width: 280px;
+  opacity: 0.95;
+}
+
+/* Icon */
+image {
+  color: #ddcbc6;
+  -gtk-icon-size: 32px;
+  margin-right: 12px;
+}
+
+/* Progress bar track */
+progressbar {
+  min-height: 8px;
+}
+
+progressbar trough {
+  background-color: #2e2e2e;
+  border-radius: 0px;
+  min-height: 8px;
+}
+
+/* Progress bar fill */
+progressbar progress {
+  background-color: #ddcbc6;
+  border-radius: 0px;
+  min-height: 8px;
+}
+
+/* Label / percentage text */
+label {
+  color: #ddcbc6;
+  font-size: 13px;
+  font-weight: 500;
+}
