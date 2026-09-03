@@ -10,7 +10,7 @@ A lightweight, minimal Linux desktop environment setup.
 | **Application Launcher** | Fuzzel |
 | **Terminal Emulator** | Foot |
 | **Notification Daemon** | Dunst |
-| **On-Screen Display** | SwayOSD |
+| **Volume idicator** | SwayOSD |
 
 ## Showcase
 
