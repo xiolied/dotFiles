@@ -1,4 +1,4 @@
-some stuffs..
+some stuffs../n
 bar - waybar
 launcher - fuzzel
 term - foot
