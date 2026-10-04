@@ -1,0 +1,57 @@
+/* swayosd style */
+@define-color osd_bg rgba(20, 20, 21, 0.85);
+@define-color osd_bd #cdcdcd;
+@define-color osd_trough #2e2e2e;
+@define-color osd_fill #cdcdcd;
+@define-color osd_text #cdcdcd;
+
+window#osd {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+box#container {
+  background-color: @osd_bg;
+  border: 2px solid @osd_bd;
+  border-radius: 0px;
+  padding: 16px 24px;
+  min-width: 280px;
+  box-shadow: none;
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+/* Icon */
+image {
+  color: @osd_text;
+  -gtk-icon-size: 32px;
+  margin-right: 12px;
+}
+
+/* Progress bar track */
+progressbar {
+  min-height: 8px;
+}
+
+progressbar trough {
+  background-color: @osd_trough;
+  border-radius: 0px;
+  min-height: 8px;
+}
+
+/* Progress bar fill */
+progressbar progress {
+  background-color: @osd_fill;
+  border-radius: 0px;
+  min-height: 8px;
+}
+
+/* Label / percentage text */
+label {
+  color: @osd_text;
+  font-size: 13px;
+  font-weight: bold;
+}

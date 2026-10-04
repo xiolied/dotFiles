@@ -1,0 +1,93 @@
+{
+  "position": "bottom",
+  "modules-left": ["sway/workspaces", "hyprland/workspaces"],
+  "modules-center": [],
+  "modules-right": [
+    "tray",
+    "memory",
+    "bluetooth",
+    "network",
+    "battery",
+    "clock",
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+    },
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "󰉋",
+      "4": "󰊴",
+      "5": "",
+      "default": "",
+    },
+  },
+  "sway/workspaces": {
+    "format": "{icon}",
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+    },
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "󰉋",
+      "4": "󰊴",
+      "5": "",
+      "default": "",
+    },
+  },
+  "pulseaudio": {
+    "format": "Vol: {volume}%",
+    "format-bluetooth": "(Bt)Vol: {volume}%",
+    "format-muted": "Vul: Muted",
+    "scroll-step": 5,
+  },
+  "memory": {
+    "interval": 10,
+    "format": "Mem: {percentage}%",
+    "tooltip-format": "RAM: {used:0.1f}GiB / {total:0.1f}GiB ({percentage}%)",
+    "on-click": "foot btop",
+    "states": {
+      "critical": 85,
+    },
+  },
+  "network": {
+    "format": "Wifi: Off/Connecting",
+    "format-wifi": "Wifi: {essid} ({signalStrength}%)",
+    "format-disconnected": "Wifi: Disconnected",
+    "max-length": 20,
+  },
+  "bluetooth": {
+    "format": "Bt: Off/Connecting",
+    "format-disabled": "Bt: Disabled",
+    "format-connected": "Bt: {device_alias}",
+  },
+  "battery": {
+    "interval": 30,
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "Bat: {capacity}%",
+  },
+
+  "clock": {
+    "format": "{:%Y-%m-%d %H:%M}",
+    "format-alt": "{:%a, %d. %b  %H:%M}",
+  },
+  "tray": {
+    "icon-size": 13,
+    "spacing": 8,
+  },
+}

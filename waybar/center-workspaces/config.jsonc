@@ -1,0 +1,146 @@
+{
+  "layer": "top",
+  "margin-top": 7,
+  "margin-left": 7,
+  "margin-right": 7,
+  "position": "top",
+
+  "modules-left": [
+    "custom/os-icon",
+    "custom/sep",
+    "clock",
+    "custom/sep",
+    "hyprland/window",
+  ],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": [
+    "tray",
+    "custom/sep",
+    "pulseaudio",
+    "memory",
+    "network",
+    "bluetooth",
+    "battery",
+  ],
+
+  "tray": {
+    "icon-size": 17,
+    "spacing": 8,
+  },
+
+  "custom/os-icon": {
+    "format": "󰣇",
+    "tooltip": false,
+  },
+
+  "custom/sep": {
+    "format": "│",
+    "tooltip": false,
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 25,
+    "separate-outputs": true,
+    "rewrite": {
+      "": "desktop",
+    },
+    "tooltip-format": "{class}: {title}",
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+    },
+    "format-icons": {
+      "1": "I",
+      "2": "II",
+      "3": "III",
+      "4": "IV",
+      "5": "V",
+      "6": "VI",
+      "7": "VII",
+      "active": "󱓻",
+      "default": "",
+    },
+  },
+  "battery": {
+    "interval": 30,
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon}",
+    "format-icons": {
+      "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+    },
+    "tooltip-format": "{capacity}%",
+  },
+
+  "clock": {
+    "format": "{:%a, %d - %H:%M}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#cdcdcd'><b>{}</b></span>",
+        "days": "<span color='#cdcdcd'><b>{}</b></span>",
+        "weekdays": "<span color='#7e98e8'><b>{}</b></span>",
+        "today": "<span color='#f3be7c'><b><u>{}</u></b></span>",
+      },
+    },
+    "actions": {
+      "on-click-right": "mode",
+    },
+  },
+
+  "memory": {
+    "interval": 10,
+    "format": "",
+    "on-click": "foot btop",
+    "tooltip": true,
+    "tooltip-format": "RAM: {used:0.1f}GiB / {total:0.1f}GiB ({percentage}%)",
+    "states": {
+      "critical": 85,
+    },
+  },
+
+  "network": {
+    "format": "󱛇",
+    "format-wifi": "󱚻",
+    "format-disconnected": "󰖪",
+    "max-length": 50,
+    "tooltip-format": "{essid} ({signalStrength}%)",
+    "on-click": "foot nmtui",
+  },
+
+  "bluetooth": {
+    "format": "󰂲",
+    "format-disabled": "󰂲 Off",
+    "format-connected": "󰂰",
+    "tooltip-format-connected": "{device_alias}",
+    "tooltip-format": "not connected",
+    "on-click": "foot bluetoothctl",
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", ""],
+    },
+    "scroll-step": 5,
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "tooltip-format": "Vol {volume}%",
+  },
+}

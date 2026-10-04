@@ -1,0 +1,97 @@
+/* minimal-left: i3bar look */
+
+@define-color bg #141415;
+@define-color fg #cdcdcd;
+@define-color dim #606079;
+@define-color active_bg #6e94b2;
+@define-color active_bd #7e98e8;
+@define-color active_fg #141415;
+@define-color urgent #d8647e;
+@define-color sep #252530;
+@define-color charging #7fa563;
+@define-color warning #f3be7c;
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Iosevka Nerd Font", monospace;
+  font-size: 13px;
+  font-weight: normal;
+  min-height: 0;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+window#waybar {
+  background: @bg;
+  color: @fg;
+}
+
+#workspaces button {
+  padding: 1px 9px;
+  background: transparent;
+  color: @fg;
+  border: 1px solid transparent;
+}
+
+#workspaces button.empty {
+  color: @dim;
+}
+
+#workspaces button.active {
+  background: @active_bg;
+  border-color: @active_bd;
+  color: @active_fg;
+  font-weight: bold;
+}
+
+#workspaces button.urgent {
+  background: @urgent;
+  border-color: @urgent;
+  color: @active_fg;
+}
+
+#pulseaudio,
+#memory,
+#bluetooth,
+#network,
+#battery,
+#tray,
+#clock {
+  padding: 0 12px;
+  color: @fg;
+  background: transparent;
+  border-left: 1px solid @sep;
+}
+
+#clock {
+  font-weight: bold;
+}
+
+/* states */
+#pulseaudio.muted,
+#memory.critical,
+#network.disconnected,
+#bluetooth.disabled,
+#bluetooth.off {
+  color: @urgent;
+}
+
+#battery.warning:not(.charging) {
+  color: @warning;
+}
+
+#battery.critical:not(.charging) {
+  background: @urgent;
+  color: @active_fg;
+}
+
+#battery.charging {
+  color: @charging;
+}
+
+tooltip {
+  background: @bg;
+  color: @fg;
+  border: 1px solid @sep;
+}

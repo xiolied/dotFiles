@@ -1,0 +1,47 @@
+[font]
+size = 12
+
+[font.normal]
+family = "Iosevka Nerd Font Mono"
+
+[font.italic]
+family = "Iosevka Nerd Font Mono"
+
+[font.bold]
+family = "Iosevka Nerd Font Mono"
+
+[window]
+opacity = 0.90
+decorations = "full"
+
+[window.padding]
+x = 10
+y = 0
+
+[colors.primary]
+background = "0x141415"
+foreground = "0xcdcdcd"
+
+[colors.normal]
+black = "0x141415"
+red = "0xd8647e"
+green = "0x7fa563"
+yellow = "0xe0a363"
+blue = "0x6e94b2"
+magenta = "0xbb9dbd"
+cyan = "0x9bb4bc"
+white = "0xcdcdcd"
+
+[colors.bright]
+black = "0x606079"
+red = "0xc48282"
+green = "0xb4d4cf"
+yellow = "0xf3be7c"
+blue = "0x7e98e8"
+magenta = "0xaeaed1"
+cyan = "0x90a0b5"
+white = "0xffffff"
+
+[colors.selection]
+text = "0xcdcdcd"
+background = "0x333738"

@@ -1,0 +1,97 @@
+/* Adwaita for XFCE - dark variant (neutral selection, no blue). */
+configuration {
+    show-icons: true;
+}
+
+* {
+    window-bg:    #242424;
+    view-bg:      #1e1e1e;
+    header-bg:    #2b2b2b;
+    card-bg:      #ffffff14;
+    fg:           #ffffff;
+    fg-dim:       #ffffff99;
+    border-col:   #ffffff1f;
+    sel-bg:       #3d3d3d;
+    sel-fg:       #ffffff;
+    destructive:  #ff7b63;
+
+    font:             "Iosevka Nerd Font 14";
+    background-color: transparent;
+    text-color:       @fg;
+    margin:           0;
+    padding:          0;
+    spacing:          0;
+}
+
+window {
+    location:         center;
+    anchor:           center;
+    width:            560px;
+    background-color: @window-bg;
+    border:           1px;
+    border-color:     @border-col;
+    border-radius:    6px;
+}
+
+mainbox { children: [ inputbar, listview, message ]; }
+
+inputbar {
+    background-color: @header-bg;
+    border:           0 0 1px 0;
+    border-color:     @border-col;
+    border-radius:    4px 4px 0 0;
+    padding:          12px;
+    spacing:          12px;
+    children:         [ textbox-icon, entry ];
+}
+
+/* Nerd Font search icon in place of the mode name ("drun") */
+textbox-icon {
+    expand:         false;
+    str:            "  ";
+    text-color:     @fg-dim;
+    vertical-align: 0.5;
+}
+
+entry {
+    placeholder:       "Search";
+    placeholder-color: @fg-dim;
+    cursor-color:      @fg;
+    vertical-align:    0.5;
+}
+
+listview {
+    background-color: @view-bg;
+    lines:            8;
+    columns:          1;
+    dynamic:          true;
+    scrollbar:        false;
+    cycle:            true;
+    padding:          6px;
+    spacing:          2px;
+    border-radius:    0 0 4px 4px;
+}
+
+element {
+    padding:       8px 10px;
+    spacing:       10px;
+    border-radius: 3px;
+}
+
+element-icon {
+    size:           24px;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color:     inherit;
+    vertical-align: 0.5;
+    highlight:      bold underline;
+}
+
+element normal.urgent, element alternate.urgent { text-color: @destructive; }
+element selected.normal, element selected.active { background-color: @sel-bg; text-color: @sel-fg; }
+element selected.urgent { background-color: @destructive; text-color: #ffffff; }
+
+message { background-color: @view-bg; padding: 0 6px 6px 6px; border-radius: 0 0 4px 4px; }
+textbox { background-color: @card-bg; padding: 8px 10px; border-radius: 3px; }
