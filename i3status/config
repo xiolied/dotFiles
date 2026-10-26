@@ -4,7 +4,7 @@ general {
         markup = pango
 }
 
-order += "wireless _first_"
+#order += "wireless _first_"
 order += "memory"
 order += "battery all"
 order += "tztime local"
