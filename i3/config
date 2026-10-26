@@ -7,7 +7,7 @@ set $right l
 set $term st
 set $menu dmenu_run -c -l 10
 
-font pango:Iosevka Nerd Font Propo Bold 12
+font pango:Iosevka Nerd Font Propo Bold 11
 
 #  Autostart 
 exec --no-startup-id dex --autostart --environment i3
@@ -16,12 +16,14 @@ exec --no-startup-id /usr/lib/xdg-desktop-portal-gtk
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id dunst
 exec --no-startup-id picom
-exec --no-startup-id np-applet
-exec --no-startup-id feh --bg-scale ~/Pictures/walls/sunset-bridge.png
+exec --no-startup-id nm-applet
+exec --no-startup-id feh --bg-scale ~/Pictures/walls/clouds.png
 exec --no-startup-id xset r rate 200 35
 exec_always --no-startup-id autotiling 
 exec_always --no-startup-id xrdb -merge ~/.Xresources
-# Appearance #
+exec_always --no-startup-id xinput set-prop "SYNA32D8:00 06CB:CEE7 Touchpad" "libinput Tapping Enabled" 1
+
+                                        # Appearance #
 
 # class                 border  bg      text    indicator child_border
 client.focused          #7e98e8 #7e98e8 #141415 #7e98e8   #7e98e8
@@ -36,6 +38,11 @@ default_floating_border pixel 2
 
 # window rules
 for_window [class="org.gnome.Nautilus"] border pixel 2
+for_window [window_role="GtkFileChooserDialog"] floating enable, resize set 1100 700, move position center
+for_window [class="satty"] floating enable
+
+
+
 
 # statusbar
 bar {
@@ -59,7 +66,7 @@ bar {
     }
 }
 
-# Keybinds #
+                                                # Keybinds #
 
 # basic
 bindsym $mod+b exec pkill polybar || polybar 
@@ -103,7 +110,7 @@ mode "Resize" {
 }
 bindsym $mod+r mode "Resize"
 
-#  Workspaces #
+                                            # Workspaces #
 
 # names
 set $ws1 "1"
@@ -140,7 +147,7 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-#  Media keys 
+                                            # Media keys 
 
 # volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
@@ -151,3 +158,8 @@ bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT
 # brightness
 bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set 5%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+# screenshot
+bindsym Print exec --no-startup-id ~/.config/scripts/screenshot
+
+
